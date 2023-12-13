@@ -13,7 +13,7 @@ app.use((request,response,next) =>{
 })
 
 
-app.get('/categorias', cors(), async function(request,response,next){
+app.get('/todasCategorias', cors(), async function(request,response,next){
 
     let categoria = require ('./modulo/funcoes.js');
     let categorias = categoria.listarCategorias();
@@ -24,19 +24,8 @@ app.get('/categorias', cors(), async function(request,response,next){
 } )
 
 
-app.get('/comentarios/:id', cors(), async function(request,response,next){
 
-let mostrarComentario = request.params.id
-
-    let categoria = require ('./modulo/funcoes.js');
-    let categorias = categoria.comentarios(mostrarComentario);
-
-    response.json(categorias);
-    response.status(200);
-    
-} )
-
-app.get('/produtos', cors(), async function(request,response,next){
+app.get('/todosProdutos', cors(), async function(request,response,next){
 
     let produto = require ('./modulo/funcoes.js');
     let produtos = produto.listarProdutos();
@@ -46,7 +35,7 @@ app.get('/produtos', cors(), async function(request,response,next){
     
 } )
 
-app.get('/usuarios', cors(), async function(request,response,next){
+app.get('/todosUsuarios', cors(), async function(request,response,next){
 
     let usuario = require ('./modulo/funcoes.js');
     let usuarios = usuario.listarUsuarios();
